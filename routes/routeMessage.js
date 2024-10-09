@@ -1,5 +1,6 @@
 const express = require("express");
-const messageController = require("./controller/messageController");
+const messageController = require("../controller/messageController");
+
 
 const router = express.Router();
 
@@ -8,8 +9,10 @@ const router = express.Router();
 //     res.render('index', {messages: messages , title: "Mini Messageboard"});
 // })
 
-router.use("index", )
+
+router.get('/', messageController.getMessages );
+router.get('/new', messageController.getNewMessage);
+router.post('/new', messageController.newMessage);
 
 
-
-module.exports = messagesRouter;
+module.exports = router;

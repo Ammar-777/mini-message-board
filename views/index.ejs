@@ -1,16 +1,32 @@
 <!DOCTYPE html>
 <html lang="en">
+
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title><%= title %></title>
+    <title>
+        <%= title %>
+    </title>
+    <link rel="stylesheet" href="styles.css">
 </head>
-<body>
-    <% messages.forEach((message)=> { %>
-        <span><%= message.user %></span>
-        <span><%= message.text %></span>
-        <span><%= message.added %></span>
 
-    <% }); %>
+<body>
+    <div class="message-container">
+        <div class="message">
+        <% messages.forEach((message)=> { %>
+            <p class="user">
+                <%= message.user %>
+            </p>
+            <p>
+                <%= message.text %>
+            </p>
+            <p class="date">
+                <%= message.added %>
+            </p>
+
+            <% }); %>
+        </div>
+    </div>
 </body>
+
 </html>
