@@ -14,6 +14,8 @@ app.use(express.static(path.join(__dirname, 'public')));
 app.use("/", messagesRouter);
 
 
-app.listen(3000, ()=> {
-    console.log("The server is connected");
-})
+const port = process.env.PORT || 8000;
+
+app.listen(port, () => {
+  console.log(`The server is connected on port ${port}`);
+});
